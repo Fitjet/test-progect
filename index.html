@@ -16,7 +16,23 @@
   <main class="main-page__main main">
     <h2 class="main__title">создаем треугольник</h2>
     <p class="main__desc">Это ОЧЕНЬ просто...</p>
-    <button class="main__button" type="submit" onclick="var audio = new Audio('qwerty.mp3');audio.play();"><span class="visually-hidden">Обновить страницу</span></button>
+    <button class="main__button" type="submit">
+      <span class="visually-hidden">Воспоизвести мелодию</span>
+    </button>
   </main>
+  <script>
+    const audioPlay = document.querySelector('.main__button');
+    const audio = new Audio('qwerty.mp3');
+    let checker = false
+    audioPlay.addEventListener('click', function() {
+      if (checker === false){
+        audio.play();
+        checker = true
+      } else {
+        audio.pause()
+        checker = false
+      }
+    });
+  </script>
 </body>
 </html>
